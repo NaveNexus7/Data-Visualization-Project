@@ -1,0 +1,232 @@
+# Team, insert the required components wherever indicated below on the raw, original version of this R codebook .Rmd file.
+
+# TCP_R-MCIS6333_001
+
+# Data Visualization Programming Team Course Project
+# CLIENT NAME:Better By Far
+# BRAND NAME: Better By Far
+# SERVICE: Social Media Platform
+###"Better By Far" is the name of a company that wants to start a new Social Media Platform that they want also want to call "Better By Far".
+### Better By Far already has received a series of datasets from a previously hired Data Collection team. 
+### We now need to help them understand the perspective of the "Students" segment of the Target Customers
+
+# Created by:
+# TEAM:#09
+# TEAM NAME:NEXUS
+# Vaasanthi Ethakota
+# Praveen Kumar Kanuri
+
+# Created for Dr. Esther Mead, SAU Fall 2023
+
+# Created November 15, 2023
+
+#========================SECTION SEPARATOR
+
+# Dataset source: Dr. Esther Mead, SAU DVP
+# For convenience, Original datasets from source is called,
+#"9 - Social Media Platform - M1 - Initial dataset"; the filename was changed here to "M1Initial dataset.xlsx"
+#"9 - Social Media Platform - M2 - Change Over Time Delete"; the filename was changed here to "M2Change Over Time.xlsx"
+#"9 - Social Media Platform - M3 - Data Composition Delete"; the filename was changed here to "M3Data Composition.xlsx"
+#"9 - Social Media Platform - M4 - Data Distributionsxlsx Delete"; the filename was changed here to "M4Data Distributions.xlsx"
+#"9 - Social Media Platform - M5 - Group Comparisons.xlsx"; the filename was changed here to "M5Group Comparisons.xlsx"
+#"9 - Social Media Platform - M6 - Relationships"; the filename was changed here to "M6Relationships" 
+#"9 - Social Media Platform - M7 - Geographical Data.xlsx"; the filename was changed here to "M7Geographical Data.xlsx"
+#"9 - Social Media Platform - MX - text data.xlsx"; the filename was changed here to "MXText data.xlsx"
+
+#========================SECTION SEPARATOR
+
+# All lines beginning with the # symbol are comments and therefore will not be treated as executable code.
+# If you want to "uncomment" a line, simply remove the '#' symbol from the beginning of the line and it will then be treated as executable code.
+# The code lines of this notebook must be run in the order in which they are presented. Running them out of order will cause errors.
+
+#========================SECTION SEPARATOR
+
+# Install packages if required
+# Check if the "tidyverse" package is already installed, If not installed, install the "tidyverse" package
+if(!require("tidyverse")) install.packages("tidyverse") 
+# Check if the "fs" package is already installed, If not installed, install the "fs" package
+if(!require("fs")) install.packages("fs")
+# Check if the "scales" package is already installed, if not installed, install the "scales" package
+if(!require("scales")) install.packages("scales")
+# Check if the "dplyr" package is already installed, If not installed, install the "dplyr" package
+if(!require("dplyr")) install.packages("dplyr")
+# Check if the "ggplot2" package is already installed, If not installed, install the "ggplot2" package
+if (!require("ggplot2"))install.packages("ggplot2")
+# Check if the "readxl" package is already installed, If not installed, install the "readxl" package
+if(!require("readxl")) install.packages("readxl")
+
+# Requires libraries
+install.packages("tidyr")
+# Install the tidyr package 
+install.packages("ggiraphExtra")
+# This line installs the "ggiraphExtra" package using the install.packages() function.
+# The package provides extensions to ggplot2 for creating interactive and animated graphics using HTML and JavaScript.
+install.packages("ggradar")
+# This line installs the "ggradar" package using the install.packages() function.
+# The package likely provides functionality for creating radar (spider) charts using ggplot2, allowing users to visualize multivariate data on a two-dimensional plot.
+library(tidyr)
+# Load the tidyr package
+library(ggiraphExtra)
+# This line loads the "ggiraphExtra" library, which provides extensions to ggplot2 for creating interactive and animated graphics using HTML and JavaScript.
+# It allows for the creation of graphs that can be embedded in web pages and support interactive features.
+library(ggradar)
+# This line loads the "ggradar" library, which likely provides functions for creating radar (spider) charts using ggplot2.
+# Radar charts are useful for visualizing multivariate data on a two-dimensional plot, with each variable represented as a spoke.
+library(ggplot2)
+# This line loads the "ggplot2" library, a powerful and popular data visualization package in R.
+# ggplot2 is known for its declarative syntax and ability to create a wide range of static and dynamic plots.
+library(tidyverse)
+# This line loads the "tidyverse" library, which is a collection of packages for data manipulation and visualization.
+# It includes packages like dplyr, ggplot2, tidyr, and others, providing a consistent and integrated set of tools for data analysis.
+library(fs)
+# This line loads the "fs" library, which provides a set of file system functions for working with files and directories in R.
+# It includes functions for file manipulation, path construction, and directory navigation.
+library(scales)
+# This line loads the "scales" library, which is often used in conjunction with ggplot2 to customize axis scales and breaks in plots.
+library(readxl)
+# This line loads the "readxl" library, which is used for reading Excel files into R.
+# It provides functions to import data from Excel worksheets into data frames.
+library(dplyr)
+# This line loads the "dplyr" library, a key package in the tidyverse ecosystem, providing a set of functions for data manipulation.
+# It includes functions like filter, mutate, and summarize for efficient and expressive data wrangling.
+library(tidyr)
+# This line loads the "tidyr" library, which is part of the tidyverse and focuses on data tidying and reshaping.
+# It includes functions like gather and spread for converting data between wide and long formats.
+
+#========================SECTION SEPARATOR
+
+# Use the read_excel() function to load the excel dataset file that has the filename and assign them to corresponding variables.
+data0 <- read_excel("M1Initial dataset.xlsx", 1) 
+data1 <- read_excel("M2Change Over Time.xlsx", 1) 
+data2 <- read_excel("M3Data Composition.xlsx", 1) 
+data3 <- read_excel("M4Data Distributions.xlsx", 1)
+data4 <- read_excel("M5Group Comparisons.xlsx", 1)
+data5 <- read_excel("M6Relationships.xlsx", 1)
+
+# merge all the files by ID into a single dataframe called "Merge"
+Merge <- merge(data0, data1, by = "ID")
+Merge <- merge(Merge, data2, by = "ID")
+Merge <- merge(Merge, data3, by = "ID")
+Merge <- merge(Merge, data4, by = "ID")
+Merge <- merge(Merge, data5, by = "ID")
+
+#========================SECTION SEPARATOR
+
+#Replacing multiple variations of "student" with "student" in the Q2 column
+Merge$Q2 <- ifelse(tolower(Merge$Q2) %in% c("student", "Student", "STUDENT"), "student", Merge$Q2)
+
+# Create a separate data frame for students
+df_student = Merge %>% filter(Q2=="student")
+# Display the resulting data frame containing student data
+head(df_student)
+
+# Create a copy of the student data frame and standardize values in the 'Q2' column
+df_student_new = df_student
+
+#========================SECTION SEPARATOR
+
+# Create a named vector to map old column names to new column names.
+column_mapping <- c(
+  "Q1" = "Number of people living in household",
+  "Q2" = "Occupation",
+  "Q3" = "How many hours per week do you work?",
+  "Q4" = "Gender",
+  "Q5" = "Age",
+  "Q23" = "Sports",
+  "Q24" = "Movies",
+  "Q25" = "News",
+  "Q26" = "Fashion",
+  "Q27"= "Nightlife",
+  "Q28" = "Technology",
+  "Q29" = "Music",
+  "Q32" = "Sunday",
+  "Q33" = "Monday",
+  "Q34" = "Tuesday",
+  "Q35" = "Wednesday",
+  "Q36" = "Thursday",
+  "Q37" = "Friday",
+  "Q38" = "Saturday"
+)
+
+# Extract the current column names of the data frame.
+current_column_names <- names(df_student_new)
+
+# Identify the old column names that are present in the data frame.
+existing_old_column_names <- intersect(names(column_mapping), current_column_names)
+
+# Rename the columns using the names() function for only the existing old column names.
+for (old_col_name in existing_old_column_names) {
+  new_col_name <- column_mapping[old_col_name]
+  names(df_student_new)[current_column_names == old_col_name] <- new_col_name
+}
+
+# To print the updated column names
+names(df_student_new)
+
+#========================SECTION SEPARATOR
+
+
+# Working on a Radar chart
+# Make a new data frame with only selected variables of interest from the dataset.
+df_student_new_access = df_student_new %>% 
+                                select(Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday)
+
+# View how the first five rows of the dataset looks like
+head(df_student_new_access)
+
+# Define the columns of interest
+columns_of_interest <- c('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',"Saturday")
+
+# Create an empty data frame to store the results
+df_student_new_access_engagement <- data.frame()
+
+# Iterate through the columns of interest
+for (column in columns_of_interest) {
+  # Iterate through the likelihood categories
+  for (likelihood in c(-2, -1, 0, 1, 2)) {
+    # Filter the data frame based on the category and likelihood
+    filtered_data <- df_student_new_access %>%
+      filter(.data[[column]] == likelihood)
+    
+    # Calculate the count
+    count <- nrow(filtered_data)
+    
+    # Create a data frame with the results
+    result <- data.frame(Category = column, Likelihood = likelihood, Count = count)
+    
+    # Append the result to the counts data frame
+    df_student_new_access_engagement <- rbind(df_student_new_access_engagement, result)
+  }
+}
+
+# Print the resulting data frame
+print(df_student_new_access_engagement)
+
+#========================SECTION SEPARATOR
+
+# Pivot the data frame
+pivoted_df1 <- df_student_new_access_engagement %>%
+  pivot_wider(names_from = Likelihood, values_from = Count, values_fill = 0)
+
+#  Rename columns
+colnames(pivoted_df1)[colnames(pivoted_df1) == '-2'] <- 'Very_unlikely'
+colnames(pivoted_df1)[colnames(pivoted_df1) == '-1'] <- 'Unlikely'
+colnames(pivoted_df1)[colnames(pivoted_df1) == '0'] <- 'Unsure'
+colnames(pivoted_df1)[colnames(pivoted_df1) == '1'] <- 'Likely'
+colnames(pivoted_df1)[colnames(pivoted_df1) == '2'] <- 'Very_Likely'
+
+# Display the reshaped DataFrame
+print(pivoted_df1)
+
+#========================SECTION SEPARATOR
+library(ggradar)
+
+# Radar plot
+pivoted_df1 %>% 
+  mutate_each(funs(rescale), -Category) %>%
+  ggradar(values.radar = c("5","10","22"))+
+  ggtitle("Likelihood to Access Social Media Day-wise")
+# Save the plot to a file
+ggsave("TCP-Better_By_Far-PythonDV10.png")
+
+#========================SECTION SEPARATOR
