@@ -49,52 +49,52 @@ Better By Far’s use case requirements and objectives are as follows:
 ---
 
 ## Documentation
-# Data Visualization Insights for "Better By Far" Project
 
-## Mission and Scope
+# Data Visualization Insights Documentation
+
+## Introduction
 As the Data Visualization Team assigned to the "Better By Far" project, our mission was to decode the narrative woven within seven crucial datasets provided by the company. Under the guidance of Dr. Mead, our focus centered on unearthing insights related to the student segment of the target customers. Through meticulous analysis and visualization, we've translated raw data into actionable intelligence, revealing patterns and trends in user behaviors, demographics, and geographic representations. This report encapsulates our findings and corresponding recommendations, offering Better By Far a strategic roadmap for engaging and capturing the student audience on their upcoming Social Media Platform.
 
-## Insights Overview
+## Insights Summary
 
-### Annual Income Insights (Jan 2022 - Jan 2023) [line graph]
-- Proactive Engagement Strategy Needed: Identify income disclosure gaps, urging user-focused initiatives.
-- High Purchasing Power: Capitalize on users with annual incomes exceeding $100,000, while targeting the $20,000 - $79,999 majority.
+### 1. Annual Income Insights (Jan 2022 - Jan 2023)
+   - Proactive Engagement Strategy Needed: Identify income disclosure gaps, urging user-focused initiatives.
+   - High Purchasing Power: Capitalize on users with annual incomes exceeding $100,000, while targeting the $20,000 - $79,999 majority.
+   
+### 2. Maximizing User Engagement Strategies
+   - Encourage income disclosure for targeted ads; appeal to the $20,000-$79,999 segment; consider exclusive features for wealthier users to enhance user satisfaction.
 
-### Maximizing User Engagement Strategies: [donut chart]
-- Encourage income disclosure for targeted ads; appeal to the $20,000-$79,999 segment; consider exclusive features for wealthier users.
-
-### Geographic Representation [Map]
-- Target customer sample population primarily located in and around the city of San Diego.
-
-### Diversity-Driven Engagement Snapshot: [bar graph]
-- User Demographics Breakdown: Majority White (41%), Mexican American (27%), with 3% undisclosed. Explore targeted content for Mexican American users.
-- Global Opportunities: Leverage the 2% Southeast Asian and International user base; tailor content for diverse engagement and international outreach.
-
-### User Preferences for Social Media Detox:
-- Break Duration Insights: Varied user preference landscape indicating opportunities for tailored features and content.
-
-### Work Hour Distributions Among Students per Week: [histogram]
-- Diverse Engagement Levels: Insights for tailored engagement strategies based on work hour distribution.
-
-### Media Usage Insights Among Students: [Box Plot]
-- Tailored strategies for users with different media usage habits.
-
-### Print Media Usage Among Students: [Bubble chart]
-- Explore digital alternatives for users with limited interest in print media.
-
-### Willingness to Pay Insights in Student Segment: [pie chart]
-- Optimized Pricing Strategies based on user preferences.
-
-### Feature Ranking Insights in Student Segment: [Stacked bar chart]
-- Prioritize features based on user preferences for a holistic and secure user experience.
-
-### Target Customer Engagement by Content Category: [Parallel coordinated plot]
-- Strategic roadmap for engaging target customers across different content categories.
-
-### Weekly Engagement Preferences of Target Customers:
-- Insights for a well-rounded weekly engagement strategy.
-
-## Summary
-The insights derived from the data visualizations provide actionable recommendations for Better By Far. By leveraging the identified trends and patterns, the company can strategically optimize engagement strategies, pricing models, and feature enhancements to curate a dynamic and successful social media platform.
-
+### 3. Diversity-Driven Engagement Snapshot
+   - Majority White (41%), Mexican American (27%), with 3% undisclosed. Explore targeted content for Mexican American users.
+   - Global Opportunities: Leverage the 2% Southeast Asian and International user base; tailor content for diverse engagement and international outreach.
+   
+### 4. User Preferences for Social Media Detox
+   - Break Duration Insights: Varied user preference landscape indicating an opportunity for tailored features and content.
+   
+### 5. Work Hour Distributions Among Students per Week
+   - Diverse Engagement Levels: Insightful breakdown for tailored engagement strategies based on user commitment.
+   
+### 6. Media Usage Insights Among Students
+   - TV and Radio Dominance: Majority spend 1-3 hours daily; some exhibit minimal usage.
+   
+### 7. Print Media Usage Among Students
+   - Limited Print Media Engagement: Majority spend less than 1 hour weekly; explore digital alternatives for a more engaging platform experience.
+   
+### 8. Willingness to Pay Insights in Student Segment
+   - "Pricing Sweet Spot": Strong preference in the target student segment for competitive plans in the $6 to $9.99 range.
+   
+### 9. Feature Ranking Insights in Student Segment
+   - Privacy Dominance: Strong preference for data security; prioritize Privacy with 57% preference.
+   
+### 10. Target Customer Engagement by Content Category
+   - Fashion & Music Appeal: Optimize content for broader market capture.
+   
+### 11. Weekly Engagement Preferences of Target Customers
+   - Weekday Consistency: Stable engagement with the need for tailored strategies on Fridays and Sundays.
+   
+### 12. Summary of the report
+   - Capitalize on the identified "Pricing Sweet Spot" and prioritize user "Privacy."
+   - Implement tailored features for the 27% Mexican American user segment and extend multilingual support for international audiences.
+   - Refine engagement strategies considering users' work hours and media habits complemented by personalized content strategies.
+   
 ---
