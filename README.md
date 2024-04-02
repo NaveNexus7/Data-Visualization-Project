@@ -22,6 +22,32 @@ To reproduce the visualizations, follow these steps:
 3. Run the appropriate scripts or notebooks to preprocess the data.
 4. Run the scripts or notebooks to generate visualizations.
 
+---
+## Use Case Overview
+The data insights provided in this documentation are derived from the analysis of the seven datasets provided by Better By Far. Each dataset focuses on different aspects of user behavior, demographics, and preferences. The insights aim to address Better By Far's requirements and objectives outlined in the use case provided.
+
+### Use Case Description
+"Better By Far" is a company planning to launch a new Social Media Platform with the same name. The company has received datasets from a Data Collection team and seeks assistance from a Data Visualization Programming team to analyze the data and gain insights.
+
+### Requirements and Objectives
+Better By Far’s use case requirements and objectives are as follows:
+
+- **M1) Initial dataset for starting project**: Initial dataset provided by the Data Collection team.
+  
+- **M2) User Behavior and Opinions Over Time**: Analyze user behavior and opinions over time.
+  
+- **M3) Composition of User Demographics, Interests, and Intentions**: Explore user demographics, interests, and intentions.
+  
+- **M4) Distributions of User Age, Income, Usage Intent, and Purchase Intent**: Visualize distributions of user age, income, usage intent, and purchase intent.
+  
+- **M5) Demographic and other user-characteristic profile comparison**: Compare profiles of most viable, unsure, and most disinterested users.
+  
+- **M6) Revelatory relationships between user characteristics and intended behaviors**: Identify relationships between user characteristics and intended behaviors.
+ 
+- **M7) Possible data insights from geographical representations**: Extract insights from geographical representations of data.
+
+---
+
 ## Documentation
 # Data Visualization Insights for "Better By Far" Project
 
@@ -71,30 +97,4 @@ As the Data Visualization Team assigned to the "Better By Far" project, our miss
 ## Summary
 The insights derived from the data visualizations provide actionable recommendations for Better By Far. By leveraging the identified trends and patterns, the company can strategically optimize engagement strategies, pricing models, and feature enhancements to curate a dynamic and successful social media platform.
 
----
-
-## Use Case Overview
-The data insights provided in this documentation are derived from the analysis of the seven datasets provided by Better By Far. Each dataset focuses on different aspects of user behavior, demographics, and preferences. The insights aim to address Better By Far's requirements and objectives outlined in the use case provided.
-
----
-
-### Use Case Description
-"Better By Far" is a company planning to launch a new Social Media Platform with the same name. The company has received datasets from a Data Collection team and seeks assistance from a Data Visualization Programming team to analyze the data and gain insights.
-
-### Requirements and Objectives
-Better By Far’s use case requirements and objectives are as follows:
-
-- **M1) Initial dataset for starting project**: Initial dataset provided by the Data Collection team.
-  
-- **M2) User Behavior and Opinions Over Time**: Analyze user behavior and opinions over time.
-  
-- **M3) Composition of User Demographics, Interests, and Intentions**: Explore user demographics, interests, and intentions.
-  
-- **M4) Distributions of User Age, Income, Usage Intent, and Purchase Intent**: Visualize distributions of user age, income, usage intent, and purchase intent.
-  
-- **M5) Demographic and other user-characteristic profile comparison**: Compare profiles of most viable, unsure, and most disinterested users.
-  
-- **M6) Revelatory relationships between user characteristics and intended behaviors**: Identify relationships between user characteristics and intended behaviors.
- 
-- **M7) Possible data insights from geographical representations**: Extract insights from geographical representations of data.
 ---
