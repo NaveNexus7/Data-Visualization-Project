@@ -4,7 +4,7 @@
 This project aims to visualize the datasets provided by "Better By Far" in order to help the company gain insights into user behavior, demographics, interests, and intentions for their new Social Media Platform. The visualizations will assist Better By Far representatives in understanding the story of the data and making informed decisions regarding their project.
 
 ## Guidance
-- Use Case and Datasets created and provided by Dr. Esther Ledelle Mead, Assistant Professor of Computer Science, College of Science & Engineering, Southern Arkansas University (SAU), elmead@saumag.edu
+- Use Case and Datasets created and provided by **Dr. Esther Ledelle Mead**, Assistant Professor of Computer Science, College of Science & Engineering, Southern Arkansas University (SAU), elmead@saumag.edu
   
 ## Contributors
 - Vaasanthi Ethakota
